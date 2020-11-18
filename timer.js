@@ -55,7 +55,7 @@ mvpInfoMap = {
     eg_dun01: ["Aprendiz", 'aprendiz', 'eg_dun01', '8 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#eg_dun01-time", "eg_dun01"), false],
     prt_maze03: ["Baphomet", 'bafome', 'prt_maze03', '3 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '3', '0', "#prt_maze03-time", "prt_maze03"), true],
     gld_dun03: ["Baphomet", 'bafome', 'gld_dun03', '8 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun03-time", "gld_dun03"), true],
-    gl_cas02_: ["Nightmare Baphomet", 'nightmarebaphomet', 'gl_cas02_', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#gl_cas02_-time", "gl_cas02_"), false],
+    gl_cas02_: ["Nightmare Baphomet", 'bafoAmaldicoado', 'gl_cas02_', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#gl_cas02_-time", "gl_cas02_"), false],
     abbey03: ["Belzebub", 'bubu', 'abbey03', '12 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '12', '0', "#abbey03-time", "abbey03"), false],
     prt_sewb4: ["golden thief bug", 'gtb', 'prt_sewb4', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#prt_sewb4-time", "prt_sewb4"), false],
     abbey02: ["Fallen Bishop", 'bispo', 'abbey02', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#abbey02-time", "abbey02"), false],
@@ -253,7 +253,7 @@ function appendMVPinTab(mvp, mvpName, mvpTime, map, first) {
                         <p class="card-text" id="${map}-time">จะเกิดในอีก: ${mvpTime}</p>
                         <input class="form-control time-input" type="time" id="${map}-time-input">
                         <div>
-                        <button id="${map}-btn" class="btn btn-success" onclick="regenerateTimer('${map}')">Iตั้งเวลา</button>
+                        <button id="${map}-btn" class="btn btn-success" onclick="regenerateTimer('${map}')">ตั้งเวลาตาย</button>
                         <button id="${map}-btn-fav" class="btn btn-success" onclick="setFavorite('${map}', '${map}-fav')">จะเอาตัวนี้ <i id="${map}-fav" class="${localStorage.getItem(map) != undefined ? "fas":"far"} fa-star"></i></button>
                         </div>
                     </div>
