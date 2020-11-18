@@ -57,7 +57,7 @@ mvpInfoMap = {
     gld_dun03: ["Baphomet", 'bafome', 'gld_dun03', '8 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun03-time", "gld_dun03"), true],
     gl_cas02_: ["Nightmare Baphomet", 'bafoAmaldicoado', 'gl_cas02_', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#gl_cas02_-time", "gl_cas02_"), false],
     abbey03: ["Belzebub", 'bubu', 'abbey03', '12 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '12', '0', "#abbey03-time", "abbey03"), false],
-    prt_sewb4: ["golden thief bug", 'gtb', 'prt_sewb4', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#prt_sewb4-time", "prt_sewb4"), false],
+    prt_sewb4: ["Golden Thief Bug", 'gtb', 'prt_sewb4', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#prt_sewb4-time", "prt_sewb4"), false],
     abbey02: ["Fallen Bishop", 'bispo', 'abbey02', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#abbey02-time", "abbey02"), false],
     bra_dun02: ["Boitata", 'boitata', 'bra_dun02', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#bra_dun02-time", "bra_dun02"), false],
     xmas_dun02: ["Stormy Knight", 'sk', 'xmas_dun02', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#xmas_dun02-time", "xmas_dun02"), false],
@@ -219,7 +219,7 @@ function templateToast(placeholderId, placeholderMVP, mvpImage) {
     return `<div class="toast" id="${placeholderId}"role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
                 <div class="toast-header">
                     <img src="./resources/${mvpImage}.gif" class="rounded mr-2" alt="...">
-                    <strong class="mr-auto">MVP Em respawn/vivo</strong>
+                    <strong class="mr-auto">บอสเกิดแล้วสัส</strong>
                     <button type="button" class="ml-2 mb-1 close close-${placeholderId}" data-dismiss="toast" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
