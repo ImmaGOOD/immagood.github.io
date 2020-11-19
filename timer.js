@@ -3,13 +3,14 @@ var appendedMVPs = [];
 var timerMap = {};
 
 function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp) {
-    timerMap[mvp] = [deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp];
+    var deathMinute1 = deathMinute-2;
+    timerMap[mvp] = [deathHour, deathMinute1, spawnTimeHour, spawnTimeMinute, div, mvp];
     localStorage.timerMap = JSON.stringify(timerMap);
     var respawn;
     var musicPlayed;
     var toastGenerated;
-    if (deathHour != undefined && deathMinute != undefined) {
-        respawn = moment().hour(deathHour).minutes(deathMinute).add(spawnTimeHour, 'h').add(spawnTimeMinute, 'm');
+    if (deathHour != undefined && deathMinute1 != undefined) {
+        respawn = moment().hour(deathHour).minutes(deathMinute1).add(spawnTimeHour, 'h').add(spawnTimeMinute, 'm');
     } else {
         respawn = moment().add(spawnTimeHour, 'h').add(spawnTimeMinute, 'm');
     }
@@ -22,7 +23,7 @@ function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp)
 
         $(div).html(hours + "h " + minutes + "m " + seconds + "s");
         if (distance <= 0 && distance >= -600000) {
-            $(div).html("Em Respawn!");
+            $(div).html("เกิดแล้ว!");
             /*             if ($(".toast_container").has("#" + mvpInfoMap[mvp][0]).length <= 0) */
             if (!toastGenerated) {
                 generateToast(mvpInfoMap[mvp][1], mvpInfoMap[mvp][0]);
@@ -38,7 +39,7 @@ function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp)
             }
         }
         if (distance < -600000) {
-            $(div).html("MVP Vivo!");
+            $(div).html("บอสเกิดแล้ว!");
         }
     }, 1000)
 }
@@ -102,6 +103,7 @@ mvpInfoMap = {
     dic_dun03: ["Gold Queen Scaraba", 'scarabaGold', 'dic_dun03', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun03-time", "dic_dun03"), false],
     ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 ชั่วโมงs  5 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "ein_dun02"), false],
     ama_dun03: ["Samurai Specter", 'samurai', 'ama_dun03', '1 ชั่วโมง 31 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '31', "#ama_dun03-time", "ama_dun03"), false],
+    rockmi1: ["Spider Chariot", 'spiderchar', 'rockmi1', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '31', "#rockmi1-time", "rockmi1"), false],
     gl_chyard: ["Darklord", 'darkLord', 'gl_chyard', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard-time", "gl_chyard"), true],
     gl_chyard_: ["Darklord", 'darkLord', 'gl_chyard_', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard_-time", "gl_chyard_"), true],
     gld_dun04: ["Darklord", 'darkLord', 'gld_dun04', '8 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun04-time", "gld_dun04"), true],
