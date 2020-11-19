@@ -3,14 +3,13 @@ var appendedMVPs = [];
 var timerMap = {};
 
 function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp) {
-    var deathMinute1 = deathMinute-2;
-    timerMap[mvp] = [deathHour, deathMinute1, spawnTimeHour, spawnTimeMinute, div, mvp];
+    timerMap[mvp] = [deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp];
     localStorage.timerMap = JSON.stringify(timerMap);
     var respawn;
     var musicPlayed;
     var toastGenerated;
-    if (deathHour != undefined && deathMinute1 != undefined) {
-        respawn = moment().hour(deathHour).minutes(deathMinute1).add(spawnTimeHour, 'h').add(spawnTimeMinute, 'm');
+    if (deathHour != undefined && deathMinute != undefined) {
+        respawn = moment().hour(deathHour).minutes(deathMinute).add(spawnTimeHour, 'h').add(spawnTimeMinute, 'm');
     } else {
         respawn = moment().add(spawnTimeHour, 'h').add(spawnTimeMinute, 'm');
     }
@@ -79,7 +78,7 @@ mvpInfoMap = {
     tur_dun04: ["Turtle General", 'tartaruga', 'tur_dun04', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#tur_dun04-time", "tur_dun04"), false],
     gld2_ald: ["Gioia", 'gioia', 'gld2_ald', '8 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_ald-time", "gld2_ald"), false],
     mosk_dun03: ["Gopinich", 'gory', 'mosk_dun03', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#mosk_dun03-time", "mosk_dun03"), false],
-    tชั่วโมงv03: ["Ifrit", 'ifrit', 'tชั่วโมงv03', '11 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '11', '0', "#tชั่วโมงv03-time", "tชั่วโมงv03"), false],
+    thor_v03: ["Ifrit", 'ifrit', 'thor_v03', '11 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '11', '0', "#thor_v03-time", "thor_v03"), false],
     kh_dun02: ["Kiel-D-01", 'kiel', 'kh_dun02', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#kh_dun02-time", "kh_dun02"), false],
     gld2_gef: ["Kades", "kades", 'gld2_gef', '8 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld2_gef-time", "gld2_gef"), false],
     iz_dun05: ["Kraken", 'kraken', 'iz_dun05', '2 ชั่วโมง  20 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '20', "#iz_dun05-time", "iz_dun05"), false],
@@ -103,7 +102,7 @@ mvpInfoMap = {
     dic_dun03: ["Gold Queen Scaraba", 'scarabaGold', 'dic_dun03', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun03-time", "dic_dun03"), false],
     ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 ชั่วโมงs  5 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "ein_dun02"), false],
     ama_dun03: ["Samurai Specter", 'samurai', 'ama_dun03', '1 ชั่วโมง 31 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '31', "#ama_dun03-time", "ama_dun03"), false],
-    rockmi1: ["Spider Chariot", 'spiderchar', 'rockmi1', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '31', "#rockmi1-time", "rockmi1"), false],
+    rockmi1: ["Spider Chariot", 'spiderchar', 'rockmi1', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#rockmi1-time", "rockmi1"), false],
     gl_chyard: ["Darklord", 'darkLord', 'gl_chyard', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard-time", "gl_chyard"), true],
     gl_chyard_: ["Darklord", 'darkLord', 'gl_chyard_', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard_-time", "gl_chyard_"), true],
     gld_dun04: ["Darklord", 'darkLord', 'gld_dun04', '8 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun04-time", "gld_dun04"), true],
