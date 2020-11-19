@@ -97,10 +97,10 @@ mvpInfoMap = {
     gld_dun02_2: ["Maya", 'maya', 'gld_dun02_2', '8 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '8', '0', "#gld_dun02_2-time", "gld_dun02_2"), true],
     dic_dun02: ["Queen Scaraba", 'scaraba', 'dic_dun02', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun02-time", "dic_dun02"), false],
     dic_dun03: ["Gold Queen Scaraba", 'scarabaGold', 'dic_dun03', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun03-time", "scarabaGolden"), false],
-    ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 ชั่วโมง  5 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "RSX"), false],
-    ein_dun02: ["RSX-0806", 'rsx', 'ein_dun02', '2 ชั่วโมง  5 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "RSX"), false],
+    ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 ชั่วโมง 5 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "RSX"), false],
+    ein_dun02: ["RSX-0806", 'rsx', 'ein_dun02', '2 ชั่วโมง 5 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "RSX"), false],
     dic_dun03: ["Gold Queen Scaraba", 'scarabaGold', 'dic_dun03', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#dic_dun03-time", "dic_dun03"), false],
-    ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 ชั่วโมง  5 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "ein_dun02"), false],
+    ein_dun02: ["RSX-0806", 'RSX', 'ein_dun02', '2 ชั่วโมง 5 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '5', "#ein_dun02-time", "ein_dun02"), false],
     ama_dun03: ["Samurai Specter", 'samurai', 'ama_dun03', '1 ชั่วโมง 31 นาที', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '31', "#ama_dun03-time", "ama_dun03"), false],
     rockmi1: ["Spider Chariot", 'spiderchar', 'rockmi1', '2 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '2', '0', "#rockmi1-time", "rockmi1"), false],
     gl_chyard: ["Darklord", 'darkLord', 'gl_chyard', '1 ชั่วโมง', (deathHour, deathMinute) => clock(deathHour, deathMinute, '1', '0', "#gl_chyard-time", "gl_chyard"), true],
@@ -251,7 +251,7 @@ function appendMVPinTab(mvp, mvpName, mvpTime, map, first) {
                     <h5 class="card-title">${mvpName}</h5>
                     <img class="card-img-top" src="./resources/${mvp}.gif" alt="Card image cap" width="7rem" height="150">
                     <div class="card-body">
-                        <p class="card-text" id="${map}-time">จะเกิดในอีก: ${mvpTime}</p>
+                        <p class="card-text" id="${map}-time">เวลาเกิด: ${mvpTime}</p>
                         <input class="form-control time-input" type="time" id="${map}-time-input">
                         <div>
                         <button id="${map}-btn" class="btn btn-success" onclick="regenerateTimer('${map}')">ตั้งเวลาตาย</button>
