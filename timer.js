@@ -31,7 +31,7 @@ function clock(deathHour, deathMinute, spawnTimeHour, spawnTimeMinute, div, mvp)
 
 
             if (!musicPlayed) {
-                let src = 'https://www.myinstants.com/media/sounds/tuturu_1.mp3';
+                let src = 'https://www.myinstants.com/media/sounds/boss_bhUwYxQ.mp3';
                 let audio = new Audio(src);
                 audio.play();
                 musicPlayed = true;
@@ -220,7 +220,7 @@ function templateToast(placeholderId, placeholderMVP, mvpImage) {
     return `<div class="toast" id="${placeholderId}"role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
                 <div class="toast-header">
                     <img src="./resources/${mvpImage}.gif" class="rounded mr-2" alt="...">
-                    <strong class="mr-auto">บอสเกิดแล้วสัส</strong>
+                    <strong class="mr-auto">บอสเกิดแล้วไอสัส</strong>
                     <button type="button" class="ml-2 mb-1 close close-${placeholderId}" data-dismiss="toast" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
